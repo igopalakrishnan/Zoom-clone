@@ -1,18 +1,18 @@
 import React from 'react'
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { Platform, SafeAreaView, StyleSheet, Text, View } from 'react-native'
 import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
 import MenuButtons from '../components/MenuButtons';
 import ContactsMenu from '../components/ContactsMenu';
 import { StatusBar } from 'expo-status-bar';
 
-const Home = () => {
+const Home = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <SafeAreaView style={{ height: '100%'}}>
+            <SafeAreaView style={{ height: '100%' }}>
                 <Header />
                 <SearchBar />
-                <MenuButtons />
+                <MenuButtons navigation={navigation}/>
                 <ContactsMenu />
             </SafeAreaView>
         </View>

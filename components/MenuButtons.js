@@ -26,7 +26,12 @@ const items = [
     },
 ]
 
-const MenuButtons = () => {
+const MenuButtons = ({navigation}) => {
+
+    const openMeeting = () => {
+        navigation.navigate("Room")
+    }
+
     return (
         <View style={styles.container}>
 
@@ -35,6 +40,7 @@ const MenuButtons = () => {
                     <View style={styles.buttonContainer}
                     key={index}>
                         <TouchableOpacity
+                        onPress={() => item.name == "video-camera" ? openMeeting() : ""}
                             style={{...styles.button,
                             backgroundColor: item.customColor ? item.customColor : "#0470DC"}}
                         >
